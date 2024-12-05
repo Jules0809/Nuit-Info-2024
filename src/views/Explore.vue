@@ -58,6 +58,11 @@ export default {
           title: "Système digestif",
           shortDescription: "L'estomac et les intestins.",
           description: "Le système digestif décompose les aliments en nutriments qui peuvent être absorbés par le corps. Il élimine également les déchets du corps."
+        },
+        {
+          title: "Système immunitaire",
+          shortDescription: "Les défenses du corps.",
+          description: "Le système immunitaire protège le corps contre les infections et les maladies. Il identifie et détruit les agents pathogènes qui menacent la santé."
         }
       ],
       activeCard: null, // Index de la carte active
