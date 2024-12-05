@@ -1,6 +1,6 @@
 <template>
   <div class="explore">
-    <!-- Conteneur Flex pour aligner l'image et les cartes -->
+    <!-- Conteneur principal -->
     <div class="content">
       <!-- Image du corps humain -->
       <div class="image-container">
@@ -9,19 +9,31 @@
 
       <!-- Cartes à droite -->
       <div class="cards-container">
-        <div v-for="(card, index) in cards" :key="index" class="card" @click="showCard(index)">
+        <div v-for="(card, index) in cards" :key="index" class="card" @click="handleCardClick(index)">
           <h3>{{ card.title }}</h3>
           <p>{{ card.shortDescription }}</p>
         </div>
       </div>
     </div>
 
-    <!-- Petite carte qui s'affiche lors d'un clic -->
-    <div v-if="activeCard !== null" class="small-card">
-      <div class="small-card-content">
-        <h3>{{ cards[activeCard].title }}</h3>
-        <p>{{ cards[activeCard].description }}</p>
-        <button @click="closeSmallCard">Fermer</button>
+    <!-- Popup pour la comparaison du système respiratoire -->
+    <div v-if="showComparison" class="comparison-modal">
+      <div class="modal-content">
+        <h2>Comparaison : Système Respiratoire et Coraux</h2>
+        <div class="comparison-images">
+          <div class="image-block">
+            <img src="../../public/Poumon.png" alt="Poumons humains" class="comparison-image" />
+            <p>Poumons : Organe vital responsable de l'échange gazeux chez les humains.</p>
+          </div>
+          <div class="image-block">
+            <img src="../../public/Corrail.png" alt="Structure de corail" class="comparison-image" />
+            <p>Coraux : Organismes marins qui filtrent l'eau pour obtenir de l'oxygène et des nutriments.</p>
+          </div>
+        </div>
+        <p class="comparison-text">
+          Bien que les poumons et les coraux diffèrent en fonction et en structure, ils partagent une similarité fascinante : tous deux jouent un rôle clé dans les échanges gazeux. Les poumons permettent à l'oxygène d'entrer dans le sang, tandis que les coraux, via leurs polypes, absorbent l'oxygène dissous dans l'eau environnante.
+        </p>
+        <button @click="closeComparison">Fermer</button>
       </div>
     </div>
   </div>
@@ -32,48 +44,39 @@ export default {
   name: "Explore",
   data() {
     return {
-      // Liste des cartes avec titre, description courte et description complète
       cards: [
         {
           title: "Système circulatoire",
           shortDescription: "Le cœur et les vaisseaux sanguins.",
-          description: "Le système circulatoire transporte le sang, les nutriments et l'oxygène à travers tout le corps. Il joue un rôle crucial dans le maintien de l'équilibre interne."
+          description: "Le système circulatoire transporte le sang, les nutriments et l'oxygène à travers tout le corps."
         },
         {
           title: "Système respiratoire",
           shortDescription: "Les poumons et la respiration.",
-          description: "Le système respiratoire permet l'échange des gaz, permettant à l'oxygène de pénétrer dans le sang et au dioxyde de carbone d'être expulsé du corps."
+          description: "Le système respiratoire permet l'échange des gaz nécessaires à la vie. Cliquez pour en savoir plus."
         },
         {
           title: "Système nerveux",
           shortDescription: "Le cerveau et les nerfs.",
-          description: "Le système nerveux coordonne les actions du corps et transmet les signaux entre le cerveau et les différentes parties du corps."
-        },
-        {
-          title : "Système sanguin",
-          shortDescription : "Le sang et ses composants.",
-          description : "Le système sanguin est composé de cellules sanguines, de plasma et de plaquettes. Il transporte l'oxygène, les nutriments et les déchets à travers le corps."
+          description: "Le système nerveux coordonne les actions du corps et transmet les signaux."
         },
         {
           title: "Système digestif",
           shortDescription: "L'estomac et les intestins.",
-          description: "Le système digestif décompose les aliments en nutriments qui peuvent être absorbés par le corps. Il élimine également les déchets du corps."
-        },
-        {
-          title: "Système immunitaire",
-          shortDescription: "Les défenses du corps.",
-          description: "Le système immunitaire protège le corps contre les infections et les maladies. Il identifie et détruit les agents pathogènes qui menacent la santé."
+          description: "Le système digestif transforme les aliments en nutriments utilisables par le corps."
         }
       ],
-      activeCard: null, // Index de la carte active
+      showComparison: false // Contrôle l'affichage de la comparaison
     };
   },
   methods: {
-    showCard(index) {
-      this.activeCard = index; // Afficher la petite carte avec les détails
+    handleCardClick(index) {
+      if (this.cards[index].title === "Système respiratoire") {
+        this.showComparison = true;
+      }
     },
-    closeSmallCard() {
-      this.activeCard = null; // Fermer la petite carte
+    closeComparison() {
+      this.showComparison = false;
     }
   }
 };
@@ -101,6 +104,7 @@ export default {
   width: 70%;
   height: 100vh;
   object-fit: cover;
+  animation: fadeIn 1s ease-in;
 }
 
 .cards-container {
@@ -125,28 +129,53 @@ export default {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.small-card {
+.comparison-modal {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 30px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.modal-content {
+  background: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-  width: 300px;
-  z-index: 10;
-}
-
-.small-card-content h3 {
-  margin-bottom: 15px;
-  font-size: 20px;
+  padding: 30px;
+  width: 60%;
+  max-width: 800px;
+  text-align: center;
   color: black;
 }
 
-.small-card-content p {
+.comparison-images {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.image-block {
+  text-align: center;
+}
+
+.comparison-image {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.comparison-image:hover {
+  transform: scale(1.1);
+}
+
+.comparison-text {
   font-size: 16px;
-  color: black;
+  margin: 20px 0;
 }
 
 button {
@@ -161,5 +190,14 @@ button {
 
 button:hover {
   background-color: #2980b9;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 </style>
