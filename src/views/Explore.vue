@@ -177,6 +177,7 @@ export default {
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  padding-top: 60px;
 }
 
 .content {
@@ -191,7 +192,7 @@ export default {
 }
 
 .body-image {
-  width: 70%;
+  width: 65%;
   height: 100vh;
   object-fit: cover;
   animation: fadeIn 1s ease-in;
