@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <Header /> <!-- Le composant Header -->
+    <!-- Afficher le Header seulement si la route actuelle n'est pas la page d'accueil -->
+    <Header v-if="!isHomePage" /> <!-- Affichage conditionnel basé sur la route -->
+    
     <main>
-      <router-view /> <!-- Contenu dynamique selon les routes -->
+      <router-view /> <!-- Affiche le contenu dynamique selon la route -->
     </main>
   </div>
 </template>
@@ -14,6 +16,13 @@ export default {
   name: 'App',
   components: {
     Header
+  },
+  computed: {
+    // Vérifie si la route actuelle est la page d'accueil
+    isHomePage() {
+      // Remplacez 'home' par le nom exact de votre route d'accueil si nécessaire
+      return this.$route.name === 'home';
+    }
   }
 };
 </script>

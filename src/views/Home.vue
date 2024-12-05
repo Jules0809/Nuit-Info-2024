@@ -2,11 +2,11 @@
     <div class="home">
       <!-- Header avec un slogan -->
       <header>
-          <img src="../../Image/logo.png" alt="Logo" class="logo" />
+        <img src="../../Image/logo.png" alt="Logo" class="logo" />
         <div class="slogan">
           <h1>Bienvenue à Nuit Info 2024</h1>
-          <p>Explorez les parallèles fascinants entre le corps humain et les océans !</p>
-          <router-link to="/explore" class="cta-button">Commencer</router-link>
+          <p>Explorez les parallèles fascinants entre le corps humain et les océans, un voyage au cœur de la biologie et de l'écosystème marin !</p>
+          <router-link to="/explore" class="cta-button">Commencer l'Expérience</router-link>
         </div>
       </header>
   
@@ -14,35 +14,21 @@
       <section class="intro">
         <div class="intro-text">
           <h2>Un voyage entre les systèmes humains et océaniques</h2>
-          <p>Plongez dans une expérience interactive qui vous permet d'explorer les parallèles fascinants entre les systèmes biologiques et les écosystèmes marins. Découvrez les connexions invisibles qui régissent notre monde.</p>
+          <p>
+            Plongez dans une expérience interactive qui vous permet d'explorer les parallèles fascinants entre les systèmes biologiques humains et les écosystèmes marins. Découvrez les connexions invisibles qui régissent notre monde et comment ces deux systèmes, bien que différents, s'entrelacent à travers des processus vitaux.
+          </p>
+          <p>
+            Apprenez à connaître les similitudes surprenantes entre les flux sanguins et les courants marins, entre la respiration humaine et l'oxygénation des océans. Un voyage inoubliable vous attend !
+          </p>
         </div>
         <div class="intro-image">
-          <img src="https://via.placeholder.com/600x400" alt="Illustration" />
-        </div>
-      </section>
-  
-      <!-- Section d'exploration rapide -->
-      <section class="explore-preview">
-        <h2>Explorez les systèmes</h2>
-        <div class="explore-cards">
-          <div class="card" @click="goToExplore('circulatoire')">
-            <h3>Système Circulatoire</h3>
-            <p>Découvrez le cœur, les vaisseaux et leurs analogies marines.</p>
-          </div>
-          <div class="card" @click="goToExplore('respiratoire')">
-            <h3>Système Respiratoire</h3>
-            <p>Apprenez comment les poumons et les océans échangent des gaz.</p>
-          </div>
-          <div class="card" @click="goToExplore('nerveux')">
-            <h3>Système Nerveux</h3>
-            <p>Comprenez les connexions entre les nerfs et le réseau sous-marin.</p>
-          </div>
+          <img src="../../Image/img_base.png" alt="Illustration" />
         </div>
       </section>
   
       <!-- Footer -->
       <footer>
-        <p>&copy; 2024 Nuit Info. Tous droits réservés.</p>
+        <p>&copy; 2024 Nuit Info. Tous droits réservés. | Conçu pour éveiller la curiosité scientifique et l'exploration !</p>
       </footer>
     </div>
   </template>
@@ -59,75 +45,111 @@
   </script>
   
   <style scoped>
+
   .home {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3f4f6;
+    overflow-x: hidden;
   }
   
   /* Header */
   header {
-    background-color: #3498db;
+    background-color: #1abc9c;
     color: white;
-    padding: 20px;
+    padding: 70px 20px;
     position: relative;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links li {
-    display: inline;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-  }
-  
-  .slogan {
     text-align: center;
-    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  header .logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+    animation: bounce 1s ease-out infinite alternate;
   }
   
   .slogan h1 {
-    font-size: 2.5em;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    animation: slideInLeft 1.5s ease-out;
   }
   
   .slogan p {
-    font-size: 1.2em;
+    font-size: 1.4rem;
     margin-top: 10px;
+    animation: fadeIn 1.5s ease-out;
   }
   
   .cta-button {
-    background-color: #e67e22;
+    background-color: #f39c12;
     color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 18px 30px;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    margin-top: 30px;
     text-decoration: none;
-    margin-top: 20px;
     display: inline-block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
   }
   
   .cta-button:hover {
-    background-color: #d35400;
+    background-color: #e67e22;
+    transform: scale(1.1);
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
   
   /* Section principale */
   .intro {
     display: flex;
     justify-content: space-between;
-    padding: 40px;
-    background-color: #f4f4f4;
+    padding: 50px;
+    background-color: #ecf0f1;
     align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
   
   .intro-text {
@@ -135,14 +157,22 @@
   }
   
   .intro-text h2 {
-    font-size: 2em;
+    font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #34495e;
+  }
+  
+  .intro-text p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    line-height: 1.8;
   }
   
   .intro-image img {
     width: 100%;
-    max-width: 600px;
-    border-radius: 10px;
+    max-width: 650px;
+    border-radius: 15px;
+    animation: fadeInUp 1.5s ease-out;
   }
   
   /* Section d'exploration rapide */
@@ -151,41 +181,67 @@
     text-align: center;
   }
   
+  .explore-preview h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+  
+  .explore-preview p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+  
   .explore-cards {
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
+    gap: 20px;
   }
   
   .card {
     background-color: white;
-    width: 250px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 2s ease-out;
   }
   
   .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-15px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   }
   
   .card h3 {
-    font-size: 1.5em;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #34495e;
   }
   
   .card p {
-    font-size: 1em;
+    font-size: 1.1rem;
+    color: #7f8c8d;
   }
   
   /* Footer */
   footer {
-    background-color: #2c3e50;
+    background-color: #34495e;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  footer p {
+    font-size: 1rem;
   }
   </style>
   
