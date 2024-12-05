@@ -1,11 +1,15 @@
 <template>
   <div class="home">
-    <!-- Header avec un slogan -->
+    <!-- Header avec bulles animées -->
     <header>
+      <div class="bubble-container">
+        <div v-for="n in 20" :key="n" class="bubble" :style="getRandomBubbleStyle()"></div>
+      </div>
       <img src="../../Image/logo.png" alt="Logo" class="logo" />
       <div class="slogan">
         <h1>Bienvenue à Nuit Info 2024</h1>
         <p>Explorez les parallèles fascinants entre le corps humain et les océans, un voyage au cœur de la biologie et de l'écosystème marin !</p>
+        <p>Rejoignez-nous pour une expérience immersive unique.</p>
         <router-link to="/explore" class="cta-button">Commencer l'Expérience</router-link>
       </div>
     </header>
@@ -51,6 +55,19 @@
 <script>
 export default {
   name: "Home",
+  methods: {
+    getRandomBubbleStyle() {
+      const randomSize = Math.random() * (25 - 10) + 10; // Taille aléatoire entre 10px et 25px
+      const randomLeft = Math.random() * 100; // Position horizontale aléatoire
+      const randomDelay = Math.random() * 5 + 2; // Délai d'animation aléatoire
+      return {
+        width: `${randomSize}px`,
+        height: `${randomSize}px`,
+        left: `${randomLeft}%`,
+        animationDuration: `${randomDelay}s`, // Variation de la vitesse de montée
+      };
+    }
+  }
 };
 </script>
 
@@ -71,12 +88,54 @@ header {
   padding: 70px 20px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bulles animées */
+.bubble-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: bubble-rise 6s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
 }
 
 header .logo {
   max-width: 150px;
   margin-bottom: 20px;
   animation: bounce 1.5s ease-out infinite alternate;
+  position: relative;
+  z-index: 1;
+}
+
+.slogan {
+  position: relative;
+  z-index: 1;
 }
 
 .slogan h1 {
@@ -117,73 +176,32 @@ header .logo {
   padding: 60px 40px;
   background: linear-gradient(145deg, #56b2e7, #2a5470); /* Reflet aquatique */
   color: #f1faee;
-  margin: 20px 0;
+  margin: 20px auto;
   border-radius: 25px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 80%; /* Réduction de la largeur */
+  transition: transform 0.3s ease;
 }
 
 .intro:hover, .intro2:hover {
   transform: scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Ajout de motifs subtils */
-.intro::before, .intro2::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  left: -50px;
-  width: 200px;
-  height: 200px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  filter: blur(80px);
-  animation: float 6s ease-in-out infinite;
-}
-
-.intro::after, .intro2::after {
-  content: "";
-  position: absolute;
-  bottom: -50px;
-  right: -50px;
-  width: 150px;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  filter: blur(50px);
-  animation: float 8s ease-in-out infinite reverse;
-}
-
-/* Contenu texte */
-.intro-text h2, .intro2 h2 {
-  font-size: 2.5rem;
+.intro-text h2, .intro-text p {
   margin-bottom: 20px;
-  color: #ffffff;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  text-align: justify;
 }
 
-.intro-text p, .intro2 p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  margin-bottom: 15px;
-  color: #d4e8f5;
-}
-
-/* Images */
 .intro-image img, .intro-image2 img {
   width: 100%;
   max-width: 500px;
   border-radius: 20px;
-  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .intro-image img:hover, .intro-image2 img:hover {
   transform: scale(1.05);
-  filter: brightness(1.1);
 }
 
 /* Footer */
@@ -225,18 +243,6 @@ footer {
   }
   50% {
     transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
   }
   100% {
     transform: translateY(0);
