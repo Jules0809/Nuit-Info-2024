@@ -16,8 +16,8 @@
       </div>
     </div>
 
-    <!-- Popup pour la comparaison du système respiratoire -->
-    <div v-if="showComparison" class="comparison-modal">
+    <!-- Popup pour le système respiratoire -->
+    <div v-if="showRespiratoryComparison" class="comparison-modal">
       <div class="modal-content">
         <h2>Comparaison : Système Respiratoire et Coraux</h2>
         <div class="comparison-images">
@@ -33,9 +33,74 @@
         <p class="comparison-text">
           Bien que les poumons et les coraux diffèrent en fonction et en structure, ils partagent une similarité fascinante : tous deux jouent un rôle clé dans les échanges gazeux. Les poumons permettent à l'oxygène d'entrer dans le sang, tandis que les coraux, via leurs polypes, absorbent l'oxygène dissous dans l'eau environnante.
         </p>
-        <button @click="closeComparison">Fermer</button>
+        <button @click="closeRespiratoryComparison">Fermer</button>
       </div>
     </div>
+
+    <!-- Popup pour le système circulatoire -->
+    <div v-if="showCirculatoryComparison" class="comparison-modal">
+      <div class="modal-content">
+        <h2>Comparaison : Système Circulatoire et Réseaux Vasculaires</h2>
+        <div class="comparison-images">
+          <div class="image-block">
+            <img src="../../public/Coeur.png" alt="Cœur humain" class="comparison-image heart-beat" />
+            <p>Cœur : Organe qui pompe le sang à travers le corps.</p>
+          </div>
+          <div class="image-block">
+            <img src="../../public/Courant_marin.png" alt="Réseaux vasculaires" class="comparison-image" />
+            <p>Réseaux vasculaires : Structures qui transportent des fluides dans la nature.</p>
+          </div>
+        </div>
+        <p class="comparison-text">
+          Le système circulatoire et les réseaux vasculaires jouent un rôle similaire dans le transport de fluides essentiels, qu'il s'agisse de sang ou d'eau.
+        </p>
+        <button @click="closeCirculatoryComparison">Fermer</button>
+      </div>
+    </div>
+
+  <!-- Popup pour le système nerveux -->
+  <div v-if="showNervousComparison" class="comparison-modal">
+    <div class="modal-content">
+      <h2>Comparaison : Système Nerveux et Surface de l'Eau</h2>
+      <div class="comparison-images">
+        <div class="image-block">
+          <img src="../../public/Cerveau.png" alt="Cerveau humain" class="comparison-image" />
+          <p>Cerveau : Centre de contrôle des fonctions corporelles, traitant et transmettant des informations rapidement.</p>
+        </div>
+        <div class="image-block">
+          <img src="../../public/Surface.png" alt="Surface de l'eau" class="comparison-image" />
+          <p>Surface de l'eau : Milieu qui réagit aux stimuli externes, créant des vagues et des ondulations pour transmettre l'énergie.</p>
+        </div>
+      </div>
+      <p class="comparison-text">
+        Le système nerveux, comme la surface de l'eau, est un réseau de communication qui répond aux stimuli. Tandis que les neurones transmettent des signaux électriques dans le corps, la surface de l'eau réagit aux influences extérieures en formant des vagues, véhiculant l'énergie de manière dynamique.
+      </p>
+      <button @click="closeNervousComparison">Fermer</button>
+    </div>
+  </div>
+
+
+    <!-- Popup pour le système digestif -->
+    <div v-if="showDigestiveComparison" class="comparison-modal">
+      <div class="modal-content">
+        <h2>Comparaison : Système Digestif et Fleuve</h2>
+        <div class="comparison-images">
+          <div class="image-block">
+            <img src="../../public/Digestif.png" alt="Estomac humain" class="comparison-image" />
+            <p>Estomac : Organe qui décompose les aliments en nutriments essentiels pour le corps.</p>
+          </div>
+          <div class="image-block">
+            <img src="../../public/Fleuve.png" alt="Fleuve" class="comparison-image" />
+            <p>Fleuve : Cours d'eau qui transporte et répartit les nutriments à travers les écosystèmes.</p>
+          </div>
+        </div>
+        <p class="comparison-text">
+          Le système digestif, tout comme un fleuve, joue un rôle crucial dans le transport et la distribution de substances vitales. Tandis que l'estomac décompose les aliments pour libérer des nutriments, un fleuve transporte l'eau et les nutriments à travers la nature, soutenant la vie de divers écosystèmes.
+        </p>
+        <button @click="closeDigestiveComparison">Fermer</button>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -66,27 +131,53 @@ export default {
           description: "Le système digestif transforme les aliments en nutriments utilisables par le corps."
         }
       ],
-      showComparison: false // Contrôle l'affichage de la comparaison
+      showRespiratoryComparison: false,
+      showCirculatoryComparison: false,
+      showNervousComparison: false,
+      showDigestiveComparison: false
     };
   },
   methods: {
     handleCardClick(index) {
-      if (this.cards[index].title === "Système respiratoire") {
-        this.showComparison = true;
+      switch (this.cards[index].title) {
+        case "Système respiratoire":
+          this.showRespiratoryComparison = true;
+          break;
+        case "Système circulatoire":
+          this.showCirculatoryComparison = true;
+          break;
+        case "Système nerveux":
+          this.showNervousComparison = true;
+          break;
+        case "Système digestif":
+          this.showDigestiveComparison = true;
+          break;
       }
     },
-    closeComparison() {
-      this.showComparison = false;
+    closeRespiratoryComparison() {
+      this.showRespiratoryComparison = false;
+    },
+    closeCirculatoryComparison() {
+      this.showCirculatoryComparison = false;
+    },
+    closeNervousComparison() {
+      this.showNervousComparison = false;
+    },
+    closeDigestiveComparison() {
+      this.showDigestiveComparison = false;
     }
   }
 };
 </script>
+
+
 
 <style scoped>
 .explore {
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  padding-top: 60px;
 }
 
 .content {
@@ -101,7 +192,7 @@ export default {
 }
 
 .body-image {
-  width: 70%;
+  width: 65%;
   height: 100vh;
   object-fit: cover;
   animation: fadeIn 1s ease-in;
@@ -200,4 +291,34 @@ button:hover {
     opacity: 1;
   }
 }
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+ 
+  25% {
+    transform: scale(1); /* Pause après le battement */
+  }
+  35% { 
+    transform: scale(1.1); /* Deuxième battement */
+  }
+  50% {
+    transform: scale(1); /* Pause après le deuxième battement */
+  }
+  60% {
+    transform: scale(1.1); /* Troisième battement */
+  }
+  75% {
+    transform: scale(1); /* Pause après le troisième battement */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.heart-beat {
+  animation: heartBeat 2s ease-in-out infinite; /* Durée de l'animation ajustée */
+}
+
 </style>
