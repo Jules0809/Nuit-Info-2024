@@ -42,7 +42,7 @@ body {
 }
 
 main {
-  padding: 20px;
+  padding: 0px;
   min-height: 80vh;
 }
 </style>
