@@ -79,6 +79,7 @@
     </div>
   </div>
 
+
     <!-- Popup pour le système digestif -->
     <div v-if="showDigestiveComparison" class="comparison-modal">
       <div class="modal-content">
