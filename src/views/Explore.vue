@@ -22,13 +22,13 @@
         <h2>Comparaison : Poumons et Surface de l'Océan</h2>
         <div class="comparison-images">
           <div class="image-block">
-            <img src="../../public/Poumon.png" alt="Poumons humains" class="comparison-image" />
+            <img src="../../Image/Poumon.png" alt="Poumons humains" class="comparison-image" />
             <p>
               Poumons : Organes vitaux chez les humains qui permettent l'absorption d'oxygène de l'air et l'expulsion de dioxyde de carbone.
             </p>
           </div>
           <div class="image-block">
-            <img src="../../public/surface.png" alt="Surface de l'océan" class="comparison-image" />
+            <img src="../../Image/surface.png" alt="Surface de l'océan" class="comparison-image" />
             <p>
               Surface de l'océan : Zone d'échange gazeux où l'oxygène est produit par le phytoplancton et diffusé dans l'atmosphère.
             </p>
@@ -48,11 +48,11 @@
         <h2>Comparaison : Système Circulatoire et Réseaux Vasculaires</h2>
         <div class="comparison-images">
           <div class="image-block">
-            <img src="../../public/Coeur.png" alt="Cœur humain" class="comparison-image heart-beat" />
+            <img src="../../Image/Coeur.png" alt="Cœur humain" class="comparison-image heart-beat" />
             <p>Cœur : Organe qui pompe le sang à travers le corps.</p>
           </div>
           <div class="image-block">
-            <img src="../../public/Courant_marin.png" alt="Réseaux vasculaires" class="comparison-image" />
+            <img src="../../Image/Courant_marin.png" alt="Réseaux vasculaires" class="comparison-image" />
             <p>Réseaux vasculaires : Structures qui transportent des fluides dans la nature.</p>
           </div>
         </div>
@@ -69,13 +69,13 @@
         <h2>Comparaison : Cerveau Humain et Profondeurs Abyssales</h2>
         <div class="comparison-images">
           <div class="image-block">
-            <img src="../../public/Cerveau.png" alt="Cerveau humain" class="comparison-image" />
+            <img src="../../Image/Cerveau.png" alt="Cerveau humain" class="comparison-image" />
             <p>
               Cerveau : Organe complexe et central du système nerveux, responsable de la pensée, de la mémoire, et du traitement des informations.
             </p>
           </div>
           <div class="image-block">
-            <img src="../../public/Profondeur.png" alt="Profondeurs abyssales" class="comparison-image" />
+            <img src="../../Image/Profondeur.png" alt="Profondeurs abyssales" class="comparison-image" />
             <p>
               Profondeurs abyssales : Régions les plus mystérieuses de l'océan, caractérisées par un environnement sombre, complexe, et en grande partie inexploré.
             </p>
@@ -95,13 +95,13 @@
         <h2>Comparaison : Système Digestif et Courants de Remontée Océanique</h2>
         <div class="comparison-images">
           <div class="image-block">
-            <img src="../../public/Digestif.png" alt="Estomac humain" class="comparison-image" />
+            <img src="../../Image/Digestif.png" alt="Estomac humain" class="comparison-image" />
             <p>
               Système Digestif : Ensemble d'organes qui décomposent les aliments pour extraire les nutriments nécessaires à l'organisme.
             </p>
           </div>
           <div class="image-block">
-            <img src="../../public/remonte.png" alt="Courants de remontée" class="comparison-image" />
+            <img src="../../Image/remonte.png" alt="Courants de remontée" class="comparison-image" />
             <p>
               Courants de remontée : Phénomène océanique qui ramène les nutriments des profondeurs vers la surface, nourrissant les écosystèmes marins.
             </p>
@@ -120,13 +120,13 @@
         <h2>Comparaison : Veines et Fleuves</h2>
         <div class="comparison-images">
           <div class="image-block">
-            <img src="../../public/Veine.png" alt="Veines humaines" class="comparison-image" />
+            <img src="../../Image/Veine.png" alt="Veines humaines" class="comparison-image" />
             <p>
               Veines : Vaisseaux sanguins qui transportent le sang désoxygéné des organes vers le cœur, assurant le retour et la circulation des éléments vitaux.
             </p>
           </div>
           <div class="image-block">
-            <img src="../../public/fleuve.png" alt="Fleuve" class="comparison-image" />
+            <img src="../../Image/fleuve.png" alt="Fleuve" class="comparison-image" />
             <p>
               Fleuves : Cours d'eau qui acheminent l'eau et les nutriments depuis les terres vers les océans, soutenant la vie dans de nombreux écosystèmes.
             </p>
