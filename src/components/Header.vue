@@ -9,6 +9,7 @@
         <li><router-link to="/explore" class="nav-item">Explorer</router-link></li>
         <li><router-link to="/dysfunction" class="nav-item">Dysfonctionnements</router-link></li>
         <li><router-link to="/Benefits" class="nav-item">Bienfaits</router-link></li>
+        <li><router-link to="/about" class="nav-item">À propos</router-link></li>
       </ul>
       <div class="menu-toggle" @click="toggleMenu">
         <span :class="{ 'rotate-down': menuOpen }" class="bar"></span>
