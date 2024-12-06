@@ -5,6 +5,7 @@ import Dysfunction from './views/Dysfunction.vue';
 import Benefits from './components/Benefits.vue';
 import about from './views/about.vue';
 import mention from './views/mention.vue';
+import Poisson from './views/Poisson.vue';
 
 const routes = [
   { path: '/', component: Home, name: 'home' },
@@ -12,7 +13,8 @@ const routes = [
   { path: '/dysfunction', component: Dysfunction, name: 'dysfunction' },
   { path: '/benefits', component: Benefits, name: 'benefits' },
   { path: '/about', component: about, name: 'about' },
-  { path: '/mention', component: mention, name: 'mention' }
+  { path: '/mention', component: mention, name: 'mention' },
+  { path: '/poisson', component: Poisson, name: 'poisson' }
 ];
 
 const router = createRouter({

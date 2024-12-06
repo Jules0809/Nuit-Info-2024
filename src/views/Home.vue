@@ -62,6 +62,38 @@
         </p>
       </div>
     </section>
+
+    <section class="intro3">
+  <div class="intro-image">
+    <img src="../../Image/YouTube-Logo.png" alt="Illustration des océans et de la vie humaine" />
+  </div>
+  <div class="intro-text">
+    <h2>L'importance des océans pour la vie humaine</h2>
+    <p>
+      Les océans couvrent plus de 70% de la surface de la Terre et jouent un rôle vital dans la régulation du climat, la production d'oxygène et le maintien de la biodiversité.
+    </p>
+    <p>
+      En absorbant la majeure partie du dioxyde de carbone, les océans agissent comme des poumons pour la planète, protégeant les écosystèmes terrestres des effets les plus sévères du changement climatique.
+    </p>
+    <p>
+      Cependant, les activités humaines, comme la surpêche et la pollution plastique, mettent en péril leur équilibre fragile. Agissons ensemble pour préserver ces trésors vitaux.
+    </p>
+
+    <!-- Ajout du podcast -->
+    <h3>Écoutez notre podcast sur la préservation des océans</h3>
+    <p>
+      Découvrez un podcast fascinant réalisé par la fondation Race for Water, une organisation engagée dans la préservation des océans. Ce podcast explore les actions de l'organisation contre la pollution plastique et son engagement pour lutter contre le changement climatique, en particulier à travers son programme « LEARN, SHARE, ACT ».
+    </p>
+    <p>
+      Dans ce podcast, nous rencontrons Florian Sévellec, responsable du laboratoire d'océanographie physique et spatiale de Brest, pour discuter de la circulation et de la variabilité dans le bassin atlantique, ainsi que des impacts du réchauffement climatique sur nos océans.
+    </p>
+    <!-- Intégration du lien YouTube du podcast -->
+    <div class="podcast-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/cJmtL3xLuIM" title="Podcast sur la préservation des océans" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
     <br><br><br>
 
     <!-- Footer -->
