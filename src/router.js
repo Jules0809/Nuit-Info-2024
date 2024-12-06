@@ -6,7 +6,7 @@ import Benefits from './components/Benefits.vue';
 import about from './views/about.vue';
 
 const routes = [
-  { path: '/', component: Home, name: 'home' },  // Ajout du name 'home' à la route d'accueil
+  { path: '/', component: Home, name: 'home' },
   { path: '/explore', component: Explore, name: 'explore' },
   { path: '/dysfunction', component: Dysfunction, name: 'dysfunction' },
   { path: '/benefits', component: Benefits, name: 'benefits' },

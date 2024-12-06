@@ -62,11 +62,13 @@
         </p>
       </div>
     </section>
+    <br><br><br>
 
     <!-- Footer -->
-    <footer>
+    <!-- <footer>
       <p>&copy; 2024 Nuit Info. Tous droits réservés. | Conçu pour éveiller la curiosité scientifique et l'exploration !</p>
-    </footer>
+    </footer> -->
+
   </div>
 </template>
 

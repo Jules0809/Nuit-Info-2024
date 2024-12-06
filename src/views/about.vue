@@ -5,7 +5,7 @@
         <h1>À Propos</h1>
         <p>Découvrez Race for Water et son engagement pour la préservation des océans.</p>
       </header>
-  
+      <br><br>
       <!-- Contenu principal -->
       <section class="about-content">
         <div class="about-text">
@@ -48,11 +48,11 @@
           </a>
         </div>
       </section>
-  
+      <br><br><br>
       <!-- Footer -->
-      <footer>
+      <!-- <footer>
         <p>&copy; 2024 Race for Water. Tous droits réservés. | Préservons nos océans, ensemble.</p>
-      </footer>
+      </footer> -->
     </div>
   </template>
   
