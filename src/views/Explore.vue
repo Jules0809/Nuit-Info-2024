@@ -28,7 +28,7 @@
             </p>
           </div>
           <div class="image-block">
-            <img src="../../Image/surface.png" alt="Surface de l'océan" class="comparison-image" />
+            <img :src="require('../../Image/surface.png')" alt="Surface de l'océan" class="comparison-image" />
             <p>
               Surface de l'océan : Zone d'échange gazeux où l'oxygène est produit par le phytoplancton et diffusé dans l'atmosphère.
             </p>
