@@ -31,7 +31,7 @@
           </div>
         </div>
         <p class="comparison-text">
-          Bien que les poumons et les coraux diffèrent en fonction et en structure, ils partagent une similarité fascinante : tous deux jouent un rôle clé dans les échanges gazeux. Les poumons permettent à l'oxygène d'entrer dans le sang, tandis que les coraux, via leurs polypes, absorbent l'oxygène dissous dans l'eau environnante.
+          Bien que les poumons et les coraux diffèrent en fonction et en structure, ils partagent une similarité fascinante : tous deux jouent un rôle clé dans les échanges gazeux.
         </p>
         <button @click="closeRespiratoryComparison">Fermer</button>
       </div>
@@ -58,27 +58,26 @@
       </div>
     </div>
 
-  <!-- Popup pour le système nerveux -->
-  <div v-if="showNervousComparison" class="comparison-modal">
-    <div class="modal-content">
-      <h2>Comparaison : Système Nerveux et Surface de l'Eau</h2>
-      <div class="comparison-images">
-        <div class="image-block">
-          <img src="../../public/Cerveau.png" alt="Cerveau humain" class="comparison-image" />
-          <p>Cerveau : Centre de contrôle des fonctions corporelles, traitant et transmettant des informations rapidement.</p>
+    <!-- Popup pour le système nerveux -->
+    <div v-if="showNervousComparison" class="comparison-modal">
+      <div class="modal-content">
+        <h2>Comparaison : Système Nerveux et Surface de l'Eau</h2>
+        <div class="comparison-images">
+          <div class="image-block">
+            <img src="../../public/Cerveau.png" alt="Cerveau humain" class="comparison-image" />
+            <p>Cerveau : Centre de contrôle des fonctions corporelles, traitant et transmettant des informations rapidement.</p>
+          </div>
+          <div class="image-block">
+            <img src="../../public/Surface.png" alt="Surface de l'eau" class="comparison-image" />
+            <p>Surface de l'eau : Milieu qui réagit aux stimuli externes, créant des vagues et des ondulations pour transmettre l'énergie.</p>
+          </div>
         </div>
-        <div class="image-block">
-          <img src="../../public/Surface.png" alt="Surface de l'eau" class="comparison-image" />
-          <p>Surface de l'eau : Milieu qui réagit aux stimuli externes, créant des vagues et des ondulations pour transmettre l'énergie.</p>
-        </div>
+        <p class="comparison-text">
+          Le système nerveux, comme la surface de l'eau, est un réseau de communication qui répond aux stimuli. Tandis que les neurones transmettent des signaux électriques dans le corps, la surface de l'eau réagit aux influences extérieures en formant des vagues, véhiculant l'énergie de manière dynamique.
+        </p>
+        <button @click="closeNervousComparison">Fermer</button>
       </div>
-      <p class="comparison-text">
-        Le système nerveux, comme la surface de l'eau, est un réseau de communication qui répond aux stimuli. Tandis que les neurones transmettent des signaux électriques dans le corps, la surface de l'eau réagit aux influences extérieures en formant des vagues, véhiculant l'énergie de manière dynamique.
-      </p>
-      <button @click="closeNervousComparison">Fermer</button>
     </div>
-  </div>
-
 
     <!-- Popup pour le système digestif -->
     <div v-if="showDigestiveComparison" class="comparison-modal">
@@ -100,7 +99,6 @@
         <button @click="closeDigestiveComparison">Fermer</button>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -170,16 +168,32 @@ export default {
 };
 </script>
 
-
-
 <style scoped>
+/* Style de la page principale */
 .explore {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  padding-top: 60px;
+  padding: 40px;
+  min-height: 100vh;
+  position: relative; /* Pour positionner l'image de fond par rapport à ce conteneur */
 }
 
+/* Image de fond floue */
+.explore::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../Image/fond.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px); /* Applique un flou sur l'image de fond */
+  z-index: -1; /* Placer l'image de fond derrière le contenu */
+}
+
+/* Contenu */
 .content {
   display: flex;
   justify-content: space-between;
@@ -192,41 +206,54 @@ export default {
 }
 
 .body-image {
-  width: 65%;
+  width: 70%;
   height: 100vh;
   object-fit: cover;
-  animation: fadeIn 1s ease-in;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  /* Mettre au milieu de la page */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+
+.body-image:hover {
+  transform: scale(1.05);
 }
 
 .cards-container {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
 .card {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 25px;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  color: #333;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  background-color: #f0f8ff;
 }
 
+/* Style des popups */
 .comparison-modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -234,30 +261,34 @@ export default {
 }
 
 .modal-content {
-  background: #fff;
-  border-radius: 10px;
-  padding: 30px;
-  width: 60%;
-  max-width: 800px;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 40px;
+  width: 70%;
+  max-width: 900px;
   text-align: center;
-  color: black;
+  color: #333;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.5s ease;
 }
 
 .comparison-images {
   display: flex;
-  justify-content: space-around;
-  margin: 20px 0;
+  justify-content: space-between;
+  margin: 30px 0;
 }
 
 .image-block {
   text-align: center;
+  flex: 1;
+  margin: 0 10px;
 }
 
 .comparison-image {
-  width: 150px;
+  width: 180px;
   height: auto;
-  border-radius: 10px;
-  transition: transform 0.3s;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
 }
 
 .comparison-image:hover {
@@ -265,24 +296,28 @@ export default {
 }
 
 .comparison-text {
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 1.6;
   margin: 20px 0;
+  color: #555;
 }
 
 button {
   background-color: #3498db;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 25px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
   background-color: #2980b9;
+  transform: translateY(-2px);
 }
 
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -292,25 +327,29 @@ button:hover {
   }
 }
 
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @keyframes heartBeat {
   0% {
     transform: scale(1);
   }
- 
   25% {
-    transform: scale(1); /* Pause après le battement */
-  }
-  35% { 
-    transform: scale(1.1); /* Deuxième battement */
+    transform: scale(1.1);
   }
   50% {
-    transform: scale(1); /* Pause après le deuxième battement */
-  }
-  60% {
-    transform: scale(1.1); /* Troisième battement */
+    transform: scale(1);
   }
   75% {
-    transform: scale(1); /* Pause après le troisième battement */
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);
@@ -318,7 +357,7 @@ button:hover {
 }
 
 .heart-beat {
-  animation: heartBeat 2s ease-in-out infinite; /* Durée de l'animation ajustée */
+  animation: heartBeat 2s ease-in-out infinite;
 }
 
 </style>
