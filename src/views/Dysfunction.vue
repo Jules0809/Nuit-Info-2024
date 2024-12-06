@@ -11,7 +11,7 @@
   
       <!-- Image Section -->
       <div class="illustration-container">
-        <img src="../../Image/dysfunction.png" alt="Illustration des parallèles entre humains et océans" />
+        <img src="../../Image/dis.jpg" alt="Illustration des parallèles entre humains et océans" />
       </div>
   
       <!-- Dysfunctions List Section -->
@@ -29,9 +29,9 @@
       </section>
   
       <!-- Call to Action Button -->
-      <div class="cta-container">
+      <!-- <div class="cta-container">
         <a href="#learn-more" class="cta-button">En savoir plus</a>
-      </div>
+      </div> -->
     </div>
   </template>
   

@@ -2,12 +2,13 @@
   <header class="header">
     <nav>
       <div class="logo">
-        <router-link to="/" class="logo-link">Nuit Info</router-link>
+        <router-link to="/" class="logo-link">Voyage interactif</router-link>
       </div>
       <ul :class="{ 'menu-active': menuOpen }" class="nav-list">
         <li><router-link to="/" class="nav-item">Accueil</router-link></li>
         <li><router-link to="/explore" class="nav-item">Explorer</router-link></li>
         <li><router-link to="/dysfunction" class="nav-item">Dysfonctionnements</router-link></li>
+        <li><router-link to="/Benefits" class="nav-item">Bienfaits</router-link></li>
       </ul>
       <div class="menu-toggle" @click="toggleMenu">
         <span :class="{ 'rotate-down': menuOpen }" class="bar"></span>

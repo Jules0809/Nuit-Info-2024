@@ -1,10 +1,9 @@
 <template>
   <div id="app">
-    <!-- Afficher le Header seulement si la route actuelle n'est pas la page d'accueil -->
-    <Header v-if="!isHomePage" /> <!-- Affichage conditionnel basé sur la route -->
+    <Header v-if="!isHomePage" /> 
     
     <main>
-      <router-view /> <!-- Affiche le contenu dynamique selon la route -->
+      <router-view /> 
     </main>
   </div>
 </template>
@@ -18,9 +17,7 @@ export default {
     Header
   },
   computed: {
-    // Vérifie si la route actuelle est la page d'accueil
     isHomePage() {
-      // Remplacez 'home' par le nom exact de votre route d'accueil si nécessaire
       return this.$route.name === 'home';
     }
   }
@@ -37,7 +34,7 @@ export default {
 }
 
 body {
-  background: linear-gradient(135deg, #6e7e85, #314e56); /* Fond moderne avec un dégradé */
+  background: linear-gradient(135deg, #6e7e85, #314e56);
   color: #fff;
 }
 

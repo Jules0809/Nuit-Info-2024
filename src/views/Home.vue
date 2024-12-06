@@ -5,9 +5,9 @@
       <div class="bubble-container">
         <div v-for="n in 20" :key="n" class="bubble" :style="getRandomBubbleStyle()"></div>
       </div>
-      <img src="../../Image/logo.png" alt="Logo" class="logo" />
+      <img src="../../Image/eau.png" alt="Logo" class="logo" />
       <div class="slogan">
-        <h1>Bienvenue à Nuit Info 2024</h1>
+        <h1>Bienvenue sur votre voyage interactif</h1>
         <p>Explorez les parallèles fascinants entre le corps humain et les océans, un voyage au cœur de la biologie et de l'écosystème marin !</p>
         <p>Rejoignez-nous pour une expérience immersive unique.</p>
         <router-link to="/explore" class="cta-button">Commencer l'Expérience</router-link>
@@ -42,6 +42,24 @@
       </div>
       <div class="intro-image2">
         <img src="../../Image/nuit-info.png" alt="Illustration de la Nuit de l'Info" />
+      </div>
+    </section>
+
+    <section class="intro3">
+      <div class="intro-image">
+        <img src="../../Image/logo_entreprise.png" alt="Illustration des océans et de la vie humaine" />
+      </div>
+      <div class="intro-text">
+        <h2>L'importance des océans pour la vie humaine</h2>
+        <p>
+          Les océans couvrent plus de 70% de la surface de la Terre et jouent un rôle vital dans la régulation du climat, la production d'oxygène et le maintien de la biodiversité.
+        </p>
+        <p>
+          En absorbant la majeure partie du dioxyde de carbone, les océans agissent comme des poumons pour la planète, protégeant les écosystèmes terrestres des effets les plus sévères du changement climatique.
+        </p>
+        <p>
+          Cependant, les activités humaines, comme la surpêche et la pollution plastique, mettent en péril leur équilibre fragile. Agissons ensemble pour préserver ces trésors vitaux.
+        </p>
       </div>
     </section>
 
@@ -169,7 +187,7 @@ header .logo {
 }
 
 /* Sections */
-.intro, .intro2 {
+.intro, .intro2, .intro3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -179,11 +197,11 @@ header .logo {
   margin: 20px auto;
   border-radius: 25px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  width: 80%; /* Réduction de la largeur */
+  width: 80%;
   transition: transform 0.3s ease;
 }
 
-.intro:hover, .intro2:hover {
+.intro:hover, .intro2:hover, .intro3:hover {
   transform: scale(1.02);
 }
 
@@ -195,6 +213,7 @@ header .logo {
 .intro-image img, .intro-image2 img {
   width: 100%;
   max-width: 500px;
+  margin-right: 30px;
   border-radius: 20px;
   transition: transform 0.3s ease-in-out;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
