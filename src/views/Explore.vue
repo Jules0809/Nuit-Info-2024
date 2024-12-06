@@ -127,7 +127,8 @@ export default {
           title: "Système digestif",
           shortDescription: "L'estomac et les intestins.",
           description: "Le système digestif transforme les aliments en nutriments utilisables par le corps."
-        }
+        },
+        
       ],
       showRespiratoryComparison: false,
       showCirculatoryComparison: false,

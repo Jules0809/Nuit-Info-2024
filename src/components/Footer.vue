@@ -3,7 +3,7 @@
       <p class="fade-in">
         &copy; 2024 Nuit Info. Tous droits réservés. | Conçu pour éveiller la curiosité scientifique et l'exploration !
         <br />
-        <a href="../views/about.vue" class="legal-link">Mentions légales</a> <!-- Lien vers les Mentions légales -->
+        <router-link to="/mention" class="legal-link">Mentions légales</router-link> <!-- Lien vers les Mentions légales -->
       </p>
     </footer>
   </template>
