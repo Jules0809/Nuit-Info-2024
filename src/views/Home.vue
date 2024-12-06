@@ -201,6 +201,7 @@ header .logo {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   width: 80%;
   transition: transform 0.3s ease;
+  gap: 30px;
 }
 
 .intro:hover, .intro2:hover, .intro3:hover {
