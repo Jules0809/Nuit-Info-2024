@@ -126,7 +126,7 @@
             </p>
           </div>
           <div class="image-block">
-            <img src="../../Image/fleuve.png" alt="Fleuve" class="comparison-image" />
+            <img :src="require('../../Image/fleuve.png')" alt="Fleuve" class="comparison-image" />
             <p>
               Fleuves : Cours d'eau qui acheminent l'eau et les nutriments depuis les terres vers les océans, soutenant la vie dans de nombreux écosystèmes.
             </p>
