@@ -2,11 +2,13 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from './views/Home.vue';
 import Explore from './views/Explore.vue';
 import Dysfunction from './views/Dysfunction.vue';
+import Benefits from './components/Benefits.vue';
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/explore', component: Explore },
-  { path: '/dysfunction', component: Dysfunction }
+  { path: '/', component: Home, name: 'home' },  // Ajout du name 'home' à la route d'accueil
+  { path: '/explore', component: Explore, name: 'explore' },
+  { path: '/dysfunction', component: Dysfunction, name: 'dysfunction' },
+  { path: '/benefits', component: Benefits, name: 'benefits' }
 ];
 
 const router = createRouter({

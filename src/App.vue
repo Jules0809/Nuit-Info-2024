@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <Header /> <!-- Le composant Header -->
+    <Header v-if="!isHomePage" /> 
+    
     <main>
-      <router-view /> <!-- Contenu dynamique selon les routes -->
+      <router-view /> 
     </main>
   </div>
 </template>
@@ -14,6 +15,11 @@ export default {
   name: 'App',
   components: {
     Header
+  },
+  computed: {
+    isHomePage() {
+      return this.$route.name === 'home';
+    }
   }
 };
 </script>
@@ -28,12 +34,12 @@ export default {
 }
 
 body {
-  background: linear-gradient(135deg, #6e7e85, #314e56); /* Fond moderne avec un dégradé */
+  background: linear-gradient(135deg, #6e7e85, #314e56);
   color: #fff;
 }
 
 main {
-  padding: 20px;
+  padding: 0px;
   min-height: 80vh;
 }
 </style>
