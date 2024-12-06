@@ -29,8 +29,8 @@
         <section class="slide-in delay-3">
           <h2>Propriété intellectuelle</h2>
           <p>
-            L’ensemble des contenus présents sur ce site (textes, images, vidéos, logos, etc.) est la propriété exclusive 
-            de la Race for Water Foundation ou de ses partenaires. Toute reproduction, représentation ou diffusion sans 
+            L’ensemble des contenus présents sur ce site (textes, images, vidéos, logos, etc.) est la propriété exclusive
+            de la Race for Water Foundation ou de ses partenaires. Toute reproduction, représentation ou diffusion sans
             autorisation préalable est interdite.
           </p>
         </section>
@@ -38,8 +38,8 @@
         <section class="slide-in delay-4">
           <h2>Responsabilité</h2>
           <p>
-            La fondation s’efforce de fournir des informations exactes et à jour sur ce site, mais décline toute 
-            responsabilité en cas d’erreur ou d’omission. Les liens hypertextes vers des sites tiers sont fournis à titre 
+            La fondation s’efforce de fournir des informations exactes et à jour sur ce site, mais décline toute
+            responsabilité en cas d’erreur ou d’omission. Les liens hypertextes vers des sites tiers sont fournis à titre
             informatif et ne constituent pas une approbation.
           </p>
         </section>
@@ -47,16 +47,16 @@
         <section class="slide-in delay-5">
           <h2>Contact</h2>
           <p>
-            Pour toute question relative aux mentions légales ou pour signaler un problème sur le site, veuillez nous 
+            Pour toute question relative aux mentions légales ou pour signaler un problème sur le site, veuillez nous
             contacter à l’adresse suivante : <a href="mailto:info@raceforwater.org">info@raceforwater.org</a>.
           </p>
         </section>
       </main>
   
       <!-- Footer -->
-      <footer class="fade-in delay-6">
+      <!-- <footer class="fade-in delay-6">
         <p>&copy; 2024 Race for Water. Tous droits réservés.</p>
-      </footer>
+      </footer> -->
     </div>
   </template>
   
@@ -70,17 +70,16 @@
   /* Général */
   .legal {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #f1faee, #1d3557);
-    color: #1d3557;
+    background: linear-gradient(to bottom, #dbe2ef, #1f4068); /* Bleu clair et bleu foncé */
+    color: #f1faee; /* Texte clair */
     text-align: center;
     padding: 20px;
     overflow-x: hidden;
   }
   
-  /* Header */
   header {
     padding: 30px 20px;
-    background: linear-gradient(to right, #264653, #457b9d);
+    background: linear-gradient(to right, #1f4068, #1c2741); /* Bleu foncé à bleu presque noir */
     color: #f1faee;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -95,8 +94,8 @@
   main {
     text-align: left;
     padding: 20px;
-    background: #f1faee;
-    color: #1d3557;
+    background: #f1faee; /* Blanc cassé */
+    color: #1f4068; /* Bleu foncé */
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     margin: 20px auto;
@@ -112,7 +111,7 @@
   section h2 {
     font-size: 1.8rem;
     margin-bottom: 10px;
-    color: #264653;
+    color: #1f4068; /* Bleu foncé */
   }
   
   section p {
@@ -121,17 +120,18 @@
   }
   
   a {
-    color: #2a9d8f;
+    color: #4c9e9e; /* Teal clair */
     text-decoration: none;
   }
   
   a:hover {
     text-decoration: underline;
+    color: #3c8f8f; /* Survol avec un teal plus foncé */
   }
   
   /* Footer */
   footer {
-    background: linear-gradient(to right, #264653, #2a9d8f);
+    background: linear-gradient(to right, #1f4068, #3b4c7d);
     color: white;
     padding: 20px;
     border-radius: 30px 30px 0 0;
